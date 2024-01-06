@@ -1,5 +1,8 @@
 package com.quali.org.qa.TestClasses;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import java.util.Random;
 
 import org.openqa.selenium.WebDriver;
@@ -53,7 +56,7 @@ public static void  RegisterAsNewAccount() {
 	regPageobj.clickOnContinue();
 	String actualSuccessMsg= accSuccessPageobj.assertAccountSuccessPage();
 	String expectedSuccessMsg="Your Account Has Been Created!";
-	Assert.assertEquals(actualSuccessMsg, expectedSuccessMsg);
+	AssertJUnit.assertEquals(actualSuccessMsg, expectedSuccessMsg);
 //Login with registered creds
 	LoginPage loginpage=new LoginPage(driver);
 	loginpage.clickOnLogout();
@@ -66,7 +69,7 @@ public static void  RegisterAsNewAccount() {
 	
 	String actualEditinfoMsg=	loginpage.validateeditaccountAssertText();
 	String expectedEditinfoMsg="Edit your account information";
-	Assert.assertEquals(actualEditinfoMsg, expectedEditinfoMsg);
+	AssertJUnit.assertEquals(actualEditinfoMsg, expectedEditinfoMsg);
 
 
 	//loginpageT.c
@@ -97,32 +100,33 @@ public void assertAllwarnings() {
 	
 	String actualfirstNamewarn=regPageobj.verifyFirstNamewarning();
 	String expectedfirstNamewarn="First Name must be between 1 and 32 characters!";
-	Assert.assertEquals(actualfirstNamewarn, expectedfirstNamewarn);
+	AssertJUnit.assertEquals(actualfirstNamewarn, expectedfirstNamewarn);
 	
 	String actualLastNamewarn=regPageobj.verifylastNamewarning();
 	String expectedLastNamewarn="Last Name must be between 1 and 32 characters!";
-	Assert.assertEquals(actualLastNamewarn, expectedLastNamewarn);
+	AssertJUnit.assertEquals(actualLastNamewarn, expectedLastNamewarn);
 
 String actualEmailIdwarn=regPageobj.verifyemailIDwarning();
 String expectedEmailIdwarn="E-Mail Address does not appear to be valid!";
-Assert.assertEquals(actualEmailIdwarn, expectedEmailIdwarn);
+AssertJUnit.assertEquals(actualEmailIdwarn, expectedEmailIdwarn);
 
 String actualtelephonewarn=regPageobj.verifytelephonewarning();
 String expectedtelephoneWarn="Telephone must be between 3 and 32 characters!";
-Assert.assertEquals(actualtelephonewarn, expectedtelephoneWarn);
+AssertJUnit.assertEquals(actualtelephonewarn, expectedtelephoneWarn);
 
 String actualPasswordwarn=	regPageobj.verifyPasswordwarning();
 String expectedPasswordWarn="Password must be between 4 and 20 characters!";
-Assert.assertEquals(actualPasswordwarn, expectedPasswordWarn);
+AssertJUnit.assertEquals(actualPasswordwarn, expectedPasswordWarn);
 
 String actualprivacywarn=regPageobj.verifyPrivacypolicywarning();
 String expectedprivacyWarn="Warning: You must agree to the Privacy Policy!";
-Assert.assertEquals(actualprivacywarn, expectedprivacyWarn);
+AssertJUnit.assertEquals(actualprivacywarn, expectedprivacyWarn);
 
 
 	
 	
 }
+@AfterMethod
 @AfterMethod
 public void tearDown() {
 	driver.quit();

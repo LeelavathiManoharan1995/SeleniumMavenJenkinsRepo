@@ -1,5 +1,8 @@
 package com.quali.org.qa.TestClasses;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
+import org.testng.AssertJUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -48,57 +51,58 @@ public class LoginTest extends BaseClass1 {
 
 	String actualEditinfoMsg=	loginPageobj.validateeditaccountAssertText();
 	String expectedEditinfoMsg="Edit your account information";
-	Assert.assertEquals(actualEditinfoMsg, expectedEditinfoMsg);
+	AssertJUnit.assertEquals(actualEditinfoMsg, expectedEditinfoMsg);
 	
 	String ActualchangePwdMsg=loginPageobj.validatechangePwdtext();
 	String ExpectedchangePwdMsg="Change your password";
-	Assert.assertEquals(ActualchangePwdMsg, ExpectedchangePwdMsg);
+	AssertJUnit.assertEquals(ActualchangePwdMsg, ExpectedchangePwdMsg);
 	
 	String ActualModifyAddressMsg=loginPageobj.validateModifyAddressText();
 	String ExpectedModifyAddressMsg="Modify your address book entries";
-	Assert.assertEquals(ActualModifyAddressMsg, ExpectedModifyAddressMsg);
+	AssertJUnit.assertEquals(ActualModifyAddressMsg, ExpectedModifyAddressMsg);
 	
 
 	String ActualModifyListMsg=loginPageobj.validateModifyListsText();
 	String ExpectedModifyListMsg="Modify your wish list";
-	Assert.assertEquals(ActualModifyListMsg, ExpectedModifyListMsg);
+	AssertJUnit.assertEquals(ActualModifyListMsg, ExpectedModifyListMsg);
 
 	String ActualorderHistoryMsg=loginPageobj.validateorderHistoryText();
 	String ExpectedorderHistoryMsg="View your order history";
-	Assert.assertEquals(ActualorderHistoryMsg, ExpectedorderHistoryMsg);
+	AssertJUnit.assertEquals(ActualorderHistoryMsg, ExpectedorderHistoryMsg);
 	
 
 	String ActualDownloadsMsg=loginPageobj.validateDownloadsText();
 	String ExpectedDownloadsMsg="Downloads";
-	Assert.assertEquals(ActualDownloadsMsg, ExpectedDownloadsMsg);
+	AssertJUnit.assertEquals(ActualDownloadsMsg, ExpectedDownloadsMsg);
 	
 	String ActualRewardpointsMsg=loginPageobj.validateRewardpointsText();
 	String ExpectedRewardpointsMsg="Your Reward Points";
-	Assert.assertEquals(ActualRewardpointsMsg, ExpectedRewardpointsMsg);
+	AssertJUnit.assertEquals(ActualRewardpointsMsg, ExpectedRewardpointsMsg);
 	
 	String ActualreturnreqMsg=loginPageobj.validatereturnrequestText();
 	String ExpectedreturnreqMsg="View your return requests";
-	Assert.assertEquals(ActualreturnreqMsg, ExpectedreturnreqMsg);
+	AssertJUnit.assertEquals(ActualreturnreqMsg, ExpectedreturnreqMsg);
 	
 	String ActualtxnsMsg=loginPageobj.validateTxnsText();
 	String ExpectedtxnsMsg="Your Transactions";
-	Assert.assertEquals(ActualtxnsMsg, ExpectedtxnsMsg);
+	AssertJUnit.assertEquals(ActualtxnsMsg, ExpectedtxnsMsg);
 	
 	String ActualrecuuringPayMsg=loginPageobj.validateRecurringPaymentsText();
 	String ExpectedrecuuringPayMsg="Recurring payments";
-	Assert.assertEquals(ActualrecuuringPayMsg, ExpectedrecuuringPayMsg);
+	AssertJUnit.assertEquals(ActualrecuuringPayMsg, ExpectedrecuuringPayMsg);
 	
 	String ActualRegAffilAccMsg=loginPageobj.validateRegAffilAccText();
 	String ExpectedRegAffilAccMsg="Register for an affiliate account";
-	Assert.assertEquals(ActualRegAffilAccMsg, ExpectedRegAffilAccMsg);
+	AssertJUnit.assertEquals(ActualRegAffilAccMsg, ExpectedRegAffilAccMsg);
 	
 	String ActualsubunsubMsg=loginPageobj.validatesubUnSubText();
 	String ExpectedsubusubMsg="Subscribe / unsubscribe to newsletter";
-	Assert.assertEquals(ActualsubunsubMsg, ExpectedsubusubMsg);
+	AssertJUnit.assertEquals(ActualsubunsubMsg, ExpectedsubusubMsg);
 	
 	
 	}
 	
+	@AfterMethod
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();
